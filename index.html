@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5-form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <img class="background-gif"
+    src="https://cdn.dribbble.com/userupload/21545870/file/original-8f41b319c829b0e30e5fa6f4e8b7d193.gif"
+    alt="GIF Background" />
+
+  <div class="d-flex justify-content-center align-items-center vh-100">
+    <button class="btn btn-warning btn-lg px-5 py-3" data-bs-toggle="modal" data-bs-target="#paymentFormModal">
+      Open Payment Form
+    </button>
+  </div>
+
+
+
+  <div class="modal fade" id="paymentFormModal" tabindex="-1" aria-labelledby="createFormModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+
+        <form id="modalForm">
+
+          <div class="modal-header justify-content-center">
+            <h6 class="modal-title" id="createFormModalLabel">
+              <strong> Payment Form Example <svg xmlns="http://www.w3.org/2000/svg" height="35px"
+                  viewBox="0 -960 960 960" width="35px" fill="#2854C5">
+                  <path
+                    d="M540-420q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM220-280q-24.75 0-42.37-17.63Q160-315.25 160-340v-400q0-24.75 17.63-42.38Q195.25-800 220-800h640q24.75 0 42.38 17.62Q920-764.75 920-740v400q0 24.75-17.62 42.37Q884.75-280 860-280H220Zm100-60h440q0-42 29-71t71-29v-200q-42 0-71-29t-29-71H320q0 42-29 71t-71 29v200q42 0 71 29t29 71Zm480 180H100q-24.75 0-42.37-17.63Q40-195.25 40-220v-460h60v460h700v60ZM220-340v-400 400Z" />
+                </svg> </strong>
+            </h6>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <br>
+          <div class="alert alert-danger justify-content-center" role="alert">
+            Some fields are missing
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="container p-4">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">First name</label>
+                  <input type="text" class="form-control" id="firstName" placeholder="John" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Last name</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="Doe" required>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-3">
+                  <label for="inputState" class="form-label">State</label>
+                  <select id="inputState" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>Mazowieckie</option>
+                    <option>Podlaskie</option>
+                    <option>Pomorskie</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label for="inputZip" class="form-label">Postal Code</label>
+                  <input type="text" class="form-control" id="inputZip" name="inputZip" maxlength="6" pattern="\d{5}"
+                    inputmode="numeric" required>
+                </div>
+              </div>
+
+
+
+              <div class="mb-3">
+                <label for="cardNumber" class="form-label">Card Number</label>
+                <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19"
+                  inputmode="numeric" pattern="\d{16}" required>
+              </div>
+
+              <div class="row mb-3">
+
+
+
+
+                <div class="col-md-3">
+                  <label for="cvcnumber" class="form-label">CVC</label>
+                  <input type="text" class="form-control" id="cvcnumber" placeholder="123" maxlength="3"
+                    inputmode="numeric" pattern="\d{3}" required>
+                </div>
+
+
+
+                <div class="col-md-3">
+                  <label for="exp-date" class="form-label">Expired Date</label>
+                  <input type="month" class="form-control" id="exp-date" name="exp-date" required>
+                </div>
+
+
+                <div class="col-md-12 mb-2">
+                  <label for="amount" class="form-label">Amount</label>
+                  <div class="input-group-svg" style="display:flex; align-items:center; gap:0.5rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" width="30" height="30"
+                      fill="#2854C5">
+                      <path
+                        d="M441-120v-86q-53-12-91.5-46T293-348l74-30q15 48 44.5 73t77.5 25q41 0 69.5-18.5T587-356q0-35-22-55.5T463-458q-86-27-118-64.5T313-614q0-65 42-101t86-41v-84h80v84q50 8 82.5 36.5T651-650l-74 32q-12-32-34-48t-60-16q44 0-67 19.5T393-614q0 33 30 52t104 40q69 20 104.5 63.5T667-358q0 71-42 108t-104 46v84h-80Z" />
+                    </svg>
+                    <input type="number" class="form-control" id="amount" placeholder="100.00" required>
+                  </div>
+                </div>
+
+
+                <div class="col-md-12">
+                  <fieldset>
+                    <legend class="col-form-label pt-0">We accept:</legend>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="visa" value="visa" checked>
+                      <label class="form-check-label" for="visa">VISA</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="mastercard" value="mastercard">
+                      <label class="form-check-label" for="mastercard">MasterCard</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="revolut" value="revolut">
+                      <label class="form-check-label" for="revolut">Revolut</label>
+                    </div>
+                    <div class="form-check form-check-inline disabled">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="others" value="others"
+                        disabled>
+                      <label class="form-check-label" for="others">Others:
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                          fill="#1E124A">
+                          <path
+                            d="M451-120v-84q-57-10-93.5-43.5T305-332l56-23q17 48 49 71.5t77 23.5q48 0 79-24t31-66q0-44-27.5-68T466-467q-72-23-107.5-61T323-623q0-55 35.5-92t92.5-42v-83h60v83q45 5 77.5 29.5T638-665l-56 24q-14-32-37.5-46.5T483-702q-46 0-73 21t-27 57q0 38 30 61.5T524-514q68 21 100.5 60.5T657-354q0 63-37 101.5T511-203v83h-60Z" />
+                        </svg> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                          width="20px" fill="#1E124A">
+                          <path
+                            d="M600-120q-115 0-212.5-67.5T255-370H120v-60h123q-4-28-3.5-50t3.5-50H120v-60h135q35-115 132.5-182.5T600-840q69 0 129.5 23.5T840-748l-43 42q-41-36-92-55t-105-19q-94 0-171.5 52.5T319-590h281v60H304q-5 27-5 50t5 50h296v60H319q32 85 109.5 137.5T600-180q53 0 104-18t94-56l42 42q-44 42-107 67t-133 25Z" />
+                        </svg> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                          width="20px" fill="#1E124A">
+                          <path
+                            d="M240-120v-64q26-16 47-35.5t36-41.5q15-22 23-47t8-52q0-13-1.5-25t-4.5-25H240v-60h78q-39-54-53.5-95.5T250-650q0-88 61-149t149-61q65 0 117.5 32.5T655-740l-55 23q-18-38-56.5-60.5T460-800q-62 0-106 43.5T310-650q0 39 16 76.5T390-470h170v60H409q3 13 4 26t1 24q0 53-23 99t-58 81h227q38 0 67-20t42-65l52 26q-13 59-60.5 89T560-120H240Z" />
+                        </svg> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                          width="20px" fill="#1E124A">
+                          <path
+                            d="M370-120v-90H240v-60h90v-420h-90v-60h130v-90h60v90h110v-90h60v93q54 11 87 53t33 94q0 28-11 55.5T677-495q39 20 61 56.5t22 78.5q0 62-43.5 106T610-210h-10v90h-60v-90H430v90h-60Zm20-390h180q38 0 64-26.5t26-63.5q0-38-26-64t-64-26H390v180Zm0 240h220q38 0 64-26.5t26-63.5q0-38-26-64t-64-26H390v180Z" />
+                        </svg> </label>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+
+
+              <div class="modal-body justify-content-center">
+                <div class="alert alert-danger d-none" role="alert" id="formAlert">
+                  Some fields are missing
+                </div>
+
+
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" rows="3" placeholder="Add any notes here..."></textarea>
+                </div>
+              </div>
+
+              <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Send</button>
+              </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
